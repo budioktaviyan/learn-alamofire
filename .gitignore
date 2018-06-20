@@ -70,4 +70,5 @@ fastlane/test_output
 
 # Other
 .DS_Store
-AlamofireX.xcworkspace/
+AlamofireX.xcodeproj/project.xcworkspace/xcshareddata
+AlamofireX.xcworkspace/xcshareddata

@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4368592116BCD300BEE123 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F4368582116BCD300BEE123 /* LaunchScreen.xib */; };
 		1FBA15A820C7B5CE006B21C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA15A720C7B5CE006B21C9 /* AppDelegate.swift */; };
 		1FBA15AF20C7B5CE006B21C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBA15AE20C7B5CE006B21C9 /* Assets.xcassets */; };
 		56C3D3A055D2A0CB26EEA084 /* Pods_AlamofireX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9383A2E61DC807B10A70239 /* Pods_AlamofireX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F4368582116BCD300BEE123 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		1FBA15A420C7B5CE006B21C9 /* AlamofireX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlamofireX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBA15A720C7B5CE006B21C9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FBA15AE20C7B5CE006B21C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				1FBA15A720C7B5CE006B21C9 /* AppDelegate.swift */,
+				1F4368582116BCD300BEE123 /* LaunchScreen.xib */,
 				1FBA15AE20C7B5CE006B21C9 /* Assets.xcassets */,
 				1FBA15B320C7B5CE006B21C9 /* Info.plist */,
 			);
@@ -139,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4368592116BCD300BEE123 /* LaunchScreen.xib in Resources */,
 				1FBA15AF20C7B5CE006B21C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,14 +158,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireX/Pods-AlamofireX-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -319,8 +323,8 @@
 			baseConfigurationReference = 2DA3B7BF1216674B37EBA539 /* Pods-AlamofireX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VB5GY8X6B2;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AlamofireX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -328,6 +332,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.baculsoft.alamofirex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -338,8 +343,8 @@
 			baseConfigurationReference = EF689452FD11A2FE52DD2AB1 /* Pods-AlamofireX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VB5GY8X6B2;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AlamofireX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -347,6 +352,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.baculsoft.alamofirex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

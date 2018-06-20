@@ -6,7 +6,7 @@ target 'AlamofireX' do
   use_frameworks!
 
   # Pods for AlamofireX
-  pod 'ObjectMapper', '~> 3.1.0'
-  pod 'Alamofire', '~> 4.7.2'
-  pod 'AlamofireObjectMapper', '~> 5.0.0'
+  pod 'Alamofire'
+  pod 'RxSwift'
+  pod 'RxAlamofire'
 end
