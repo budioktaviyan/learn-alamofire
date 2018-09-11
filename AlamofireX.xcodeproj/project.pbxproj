@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		1F4368592116BCD300BEE123 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F4368582116BCD300BEE123 /* LaunchScreen.xib */; };
+		1F9D03FB214747F0008374EB /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D03FA214747F0008374EB /* AppRouter.swift */; };
+		1F9D03FF214748C1008374EB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D03FE214748C1008374EB /* HomeController.swift */; };
+		1F9D0401214748DF008374EB /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D0400214748DF008374EB /* DetailController.swift */; };
 		1FBA15A820C7B5CE006B21C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA15A720C7B5CE006B21C9 /* AppDelegate.swift */; };
 		1FBA15AF20C7B5CE006B21C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBA15AE20C7B5CE006B21C9 /* Assets.xcassets */; };
+		1FD37E63217C5D9400011A0D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD37E62217C5D9400011A0D /* AppConfig.swift */; };
 		56C3D3A055D2A0CB26EEA084 /* Pods_AlamofireX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9383A2E61DC807B10A70239 /* Pods_AlamofireX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F4368582116BCD300BEE123 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		1F9D03FA214747F0008374EB /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		1F9D03FE214748C1008374EB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		1F9D0400214748DF008374EB /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		1FBA15A420C7B5CE006B21C9 /* AlamofireX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlamofireX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBA15A720C7B5CE006B21C9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FBA15AE20C7B5CE006B21C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FBA15B320C7B5CE006B21C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FD37E62217C5D9400011A0D /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		2DA3B7BF1216674B37EBA539 /* Pods-AlamofireX.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireX/Pods-AlamofireX.debug.xcconfig"; sourceTree = "<group>"; };
 		C9383A2E61DC807B10A70239 /* Pods_AlamofireX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF689452FD11A2FE52DD2AB1 /* Pods-AlamofireX.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireX.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireX/Pods-AlamofireX.release.xcconfig"; sourceTree = "<group>"; };
@@ -36,6 +44,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F9D03F8214747BF008374EB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1F9D03F9214747D1008374EB /* Modules */,
+				1FD37E62217C5D9400011A0D /* AppConfig.swift */,
+				1F9D03FA214747F0008374EB /* AppRouter.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1F9D03F9214747D1008374EB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1F9D03FC21474880008374EB /* Detail */,
+				1F9D03FD21474885008374EB /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		1F9D03FC21474880008374EB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				1F9D0400214748DF008374EB /* DetailController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		1F9D03FD21474885008374EB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1F9D03FE214748C1008374EB /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		1FBA159B20C7B5CE006B21C9 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +100,7 @@
 		1FBA15A620C7B5CE006B21C9 /* AlamofireX */ = {
 			isa = PBXGroup;
 			children = (
+				1F9D03F8214747BF008374EB /* Classes */,
 				1FBA15A720C7B5CE006B21C9 /* AppDelegate.swift */,
 				1F4368582116BCD300BEE123 /* LaunchScreen.xib */,
 				1FBA15AE20C7B5CE006B21C9 /* Assets.xcassets */,
@@ -158,14 +202,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireX/Pods-AlamofireX-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -197,7 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F9D0401214748DF008374EB /* DetailController.swift in Sources */,
+				1F9D03FB214747F0008374EB /* AppRouter.swift in Sources */,
 				1FBA15A820C7B5CE006B21C9 /* AppDelegate.swift in Sources */,
+				1FD37E63217C5D9400011A0D /* AppConfig.swift in Sources */,
+				1F9D03FF214748C1008374EB /* HomeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
