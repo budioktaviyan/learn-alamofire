@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2E4E3B217CED8400934F00 /* LoadingErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E4E3A217CED8400934F00 /* LoadingErrorView.swift */; };
+		1F2E4E3D217CF31F00934F00 /* LoadingMoreErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E4E3C217CF31F00934F00 /* LoadingMoreErrorView.swift */; };
+		1F2E4E3F217CF69200934F00 /* LoadingMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E4E3E217CF69200934F00 /* LoadingMoreView.swift */; };
 		1F4368592116BCD300BEE123 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F4368582116BCD300BEE123 /* LaunchScreen.xib */; };
 		1F9D03FB214747F0008374EB /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D03FA214747F0008374EB /* AppRouter.swift */; };
 		1F9D03FF214748C1008374EB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9D03FE214748C1008374EB /* HomeController.swift */; };
@@ -14,10 +17,21 @@
 		1FBA15A820C7B5CE006B21C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA15A720C7B5CE006B21C9 /* AppDelegate.swift */; };
 		1FBA15AF20C7B5CE006B21C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBA15AE20C7B5CE006B21C9 /* Assets.xcassets */; };
 		1FD37E63217C5D9400011A0D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD37E62217C5D9400011A0D /* AppConfig.swift */; };
+		1FD37E66217C810200011A0D /* Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD37E65217C810200011A0D /* Datasource.swift */; };
+		1FD37E68217C819900011A0D /* DatasourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD37E67217C819900011A0D /* DatasourceCell.swift */; };
+		1FD37E6A217C81D500011A0D /* DatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD37E69217C81D500011A0D /* DatasourceController.swift */; };
+		1FD37E6C217C847E00011A0D /* DefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD37E6B217C847E00011A0D /* DefaultCell.swift */; };
+		1FD37E6E217C88F300011A0D /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD37E6D217C88F300011A0D /* UIView+Helper.swift */; };
+		1FD37E70217CE51900011A0D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD37E6F217CE51900011A0D /* LoadingView.swift */; };
+		1FD37E72217CE71300011A0D /* Dictionary+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD37E71217CE71300011A0D /* Dictionary+Helper.swift */; };
+		1FD37E74217CE84F00011A0D /* UIImageView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD37E73217CE84F00011A0D /* UIImageView+Helper.swift */; };
 		56C3D3A055D2A0CB26EEA084 /* Pods_AlamofireX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9383A2E61DC807B10A70239 /* Pods_AlamofireX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F2E4E3A217CED8400934F00 /* LoadingErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingErrorView.swift; sourceTree = "<group>"; };
+		1F2E4E3C217CF31F00934F00 /* LoadingMoreErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMoreErrorView.swift; sourceTree = "<group>"; };
+		1F2E4E3E217CF69200934F00 /* LoadingMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMoreView.swift; sourceTree = "<group>"; };
 		1F4368582116BCD300BEE123 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		1F9D03FA214747F0008374EB /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		1F9D03FE214748C1008374EB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -27,6 +41,14 @@
 		1FBA15AE20C7B5CE006B21C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FBA15B320C7B5CE006B21C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD37E62217C5D9400011A0D /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		1FD37E65217C810200011A0D /* Datasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datasource.swift; sourceTree = "<group>"; };
+		1FD37E67217C819900011A0D /* DatasourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasourceCell.swift; sourceTree = "<group>"; };
+		1FD37E69217C81D500011A0D /* DatasourceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatasourceController.swift; sourceTree = "<group>"; };
+		1FD37E6B217C847E00011A0D /* DefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCell.swift; sourceTree = "<group>"; };
+		1FD37E6D217C88F300011A0D /* UIView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helper.swift"; sourceTree = "<group>"; };
+		1FD37E6F217CE51900011A0D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		1FD37E71217CE71300011A0D /* Dictionary+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Helper.swift"; sourceTree = "<group>"; };
+		1FD37E73217CE84F00011A0D /* UIImageView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helper.swift"; sourceTree = "<group>"; };
 		2DA3B7BF1216674B37EBA539 /* Pods-AlamofireX.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireX/Pods-AlamofireX.debug.xcconfig"; sourceTree = "<group>"; };
 		C9383A2E61DC807B10A70239 /* Pods_AlamofireX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF689452FD11A2FE52DD2AB1 /* Pods-AlamofireX.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireX.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlamofireX/Pods-AlamofireX.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,6 +69,7 @@
 		1F9D03F8214747BF008374EB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1FD37E64217C80A400011A0D /* Components */,
 				1F9D03F9214747D1008374EB /* Modules */,
 				1FD37E62217C5D9400011A0D /* AppConfig.swift */,
 				1F9D03FA214747F0008374EB /* AppRouter.swift */,
@@ -107,6 +130,24 @@
 				1FBA15B320C7B5CE006B21C9 /* Info.plist */,
 			);
 			path = AlamofireX;
+			sourceTree = "<group>";
+		};
+		1FD37E64217C80A400011A0D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1FD37E65217C810200011A0D /* Datasource.swift */,
+				1FD37E67217C819900011A0D /* DatasourceCell.swift */,
+				1FD37E69217C81D500011A0D /* DatasourceController.swift */,
+				1FD37E6B217C847E00011A0D /* DefaultCell.swift */,
+				1FD37E6F217CE51900011A0D /* LoadingView.swift */,
+				1F2E4E3E217CF69200934F00 /* LoadingMoreView.swift */,
+				1F2E4E3A217CED8400934F00 /* LoadingErrorView.swift */,
+				1F2E4E3C217CF31F00934F00 /* LoadingMoreErrorView.swift */,
+				1FD37E71217CE71300011A0D /* Dictionary+Helper.swift */,
+				1FD37E73217CE84F00011A0D /* UIImageView+Helper.swift */,
+				1FD37E6D217C88F300011A0D /* UIView+Helper.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		340B191CB0831B5D75A4B66E /* Pods */ = {
@@ -202,10 +243,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AlamofireX/Pods-AlamofireX-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -237,11 +280,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FD37E66217C810200011A0D /* Datasource.swift in Sources */,
+				1FD37E6C217C847E00011A0D /* DefaultCell.swift in Sources */,
 				1F9D0401214748DF008374EB /* DetailController.swift in Sources */,
+				1FD37E70217CE51900011A0D /* LoadingView.swift in Sources */,
 				1F9D03FB214747F0008374EB /* AppRouter.swift in Sources */,
+				1FD37E68217C819900011A0D /* DatasourceCell.swift in Sources */,
+				1F2E4E3B217CED8400934F00 /* LoadingErrorView.swift in Sources */,
+				1FD37E6A217C81D500011A0D /* DatasourceController.swift in Sources */,
 				1FBA15A820C7B5CE006B21C9 /* AppDelegate.swift in Sources */,
+				1F2E4E3D217CF31F00934F00 /* LoadingMoreErrorView.swift in Sources */,
+				1FD37E6E217C88F300011A0D /* UIView+Helper.swift in Sources */,
 				1FD37E63217C5D9400011A0D /* AppConfig.swift in Sources */,
+				1F2E4E3F217CF69200934F00 /* LoadingMoreView.swift in Sources */,
 				1F9D03FF214748C1008374EB /* HomeController.swift in Sources */,
+				1FD37E74217CE84F00011A0D /* UIImageView+Helper.swift in Sources */,
+				1FD37E72217CE71300011A0D /* Dictionary+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

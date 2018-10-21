@@ -1,10 +1,16 @@
 import UIKit
 
-class HomeController: UIViewController {
+class HomeController: DatasourceController {
+
+    fileprivate lazy var loadErrorView: LoadingErrorView = {
+        let view = LoadingErrorView()
+        view.delegate = self
+
+        return view
+    }()
 
     override func viewDidLoad() {
         self.title = "Home"
-        self.view.backgroundColor = .white
         self.navigationItem.backBarButtonItem = UIBarButtonItem(
             title: nil,
             style: UIBarButtonItemStyle.plain,
@@ -12,4 +18,13 @@ class HomeController: UIViewController {
             action: nil
         )
     }
+}
+
+extension HomeController: LoadingErrorDelegate, LoadingMoreErrorDelegate {
+
+    func onRetryClicked() {
+        loadErrorView.isHidden = true
+    }
+
+    func onRetryMoreClicked() {}
 }

@@ -7,4 +7,5 @@ target 'AlamofireX' do
 
   # Pods for AlamofireX
   pod 'Alamofire'
+  pod 'Kingfisher', '4.9.0'
 end
