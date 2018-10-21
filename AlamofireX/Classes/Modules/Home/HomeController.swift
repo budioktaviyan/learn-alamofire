@@ -13,6 +13,11 @@ class HomeController: DatasourceController {
         return view
     }()
 
+    fileprivate var isLoading: Bool = false
+    fileprivate var isLoadMore: Bool = false
+    fileprivate var currentPage: Int64 = 0 { didSet {self.checkCurrentPage()} }
+    fileprivate var totalPage: Int64 = 0
+
     override func viewDidLoad() {
         self.title = "Home"
         self.navigationItem.backBarButtonItem = UIBarButtonItem(
@@ -26,16 +31,47 @@ class HomeController: DatasourceController {
         self.discoverMovie()
     }
 
-    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 50)
-    }
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        switch isLoadMore {
+        case false:
+            return CGSize(width: view.frame.width, height: 0)
+        default:
+            return CGSize(width: view.frame.width, height: 50)
+        }
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 50)
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        switch elementKind {
+        case UICollectionElementKindSectionFooter:
+            switch datasources.isLoadMoreError {
+            case false:
+                guard let view = view as? LoadingMoreView else { return }
+                view.indicator.startAnimating()
+            default:
+                guard let view = view as? LoadingMoreErrorView else { return }
+                view.delegate = self
+            }
+        default:
+            break
+        }
+    }
+
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentOffsetY = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        if (currentOffsetY == maximumOffset) && currentPage + 1 <= totalPage && !isLoading { self.discoverMoreMovie() }
     }
 }
 
@@ -46,7 +82,11 @@ extension HomeController: LoadingErrorDelegate, LoadingMoreErrorDelegate {
         discoverMovie()
     }
 
-    func onRetryMoreClicked() {}
+    func onRetryMoreClicked() {
+        datasources.isLoadMoreError = false
+        reloadData()
+        discoverMoreMovie()
+    }
 
     fileprivate func showLoading() {
         initLoadView()
@@ -124,10 +164,56 @@ extension HomeController {
 
                     return
                 }
+                guard let total = model.total_pages else { return }
+
                 self.datasources.objects = model.results
+                self.totalPage = total
+                self.currentPage = 1
                 self.reloadData()
                 self.hideLoading()
         }
+    }
+
+    fileprivate func discoverMoreMovie() {
+        isLoading = true
+        params.page = currentPage + 1
+
+        // Making a network call
+        let url = AppConfig.Api.BaseURL + AppConfig.Module.Discover
+        let headers: HTTPHeaders = ["Accept": "application/json"]
+        Alamofire.request(
+            url,
+            method: .get,
+            parameters: params.request.nullKeyRemoval(),
+            encoding: URLEncoding(),
+            headers: headers).responseData { response in
+                let decoder = JSONDecoder()
+                let data: Result<HomeResponse> = decoder.decodeResponse(from: response)
+
+                // Decode response into model
+                guard let model = data.value else {
+                    self.datasources.isLoadMoreError = true
+                    self.reloadData()
+
+                    return
+                }
+
+                guard let total = model.results?.count else { return }
+                switch total {
+                case _ where total > 0:
+                    self.datasources.isLoadMoreError = false
+                    let _ = model.results?.compactMap { element in self.datasources.objects?.append(element) }
+                default: break
+                }
+
+                self.isLoading = false
+                self.currentPage += 1
+                self.reloadData()
+        }
+    }
+
+    fileprivate func checkCurrentPage() {
+        isLoadMore = currentPage < totalPage
     }
 
     fileprivate func reloadData() {

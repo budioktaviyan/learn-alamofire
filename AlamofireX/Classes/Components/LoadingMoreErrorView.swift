@@ -35,7 +35,7 @@ open class LoadingMoreErrorView: DatasourceCell {
             bottomConstant: 0,
             rightConstant: 0,
             widthConstant: 0,
-            heightConstant: 24
+            heightConstant: 0
         )
     }
 }

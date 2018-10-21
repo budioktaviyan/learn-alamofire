@@ -2,7 +2,7 @@ import UIKit
 
 open class LoadingMoreView: DatasourceCell {
 
-    fileprivate lazy var indicator: UIActivityIndicatorView = {
+    open lazy var indicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         view.hidesWhenStopped = true
 
