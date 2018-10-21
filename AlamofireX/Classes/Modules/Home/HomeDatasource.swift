@@ -9,15 +9,15 @@ class HomeDatasource: Datasource {
     }
 
     override func item(_ indexPath: IndexPath) -> Any? {
-        return objects?[indexPath.row]
+        return objects?[indexPath.item]
     }
 
     override func cellClasses() -> [DatasourceCell.Type] {
-        return []
+        return [HomeCell.self]
     }
 
     override func cellClass(_ indexPath: IndexPath) -> DatasourceCell.Type? {
-        return nil
+        return HomeCell.self
     }
 
     override func footerClasses() -> [DatasourceCell.Type]? {

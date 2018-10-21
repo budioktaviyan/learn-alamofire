@@ -1,4 +1,5 @@
 import UIKit
+import Alamofire
 
 class HomeController: DatasourceController {
 
@@ -22,7 +23,19 @@ class HomeController: DatasourceController {
         )
         self.collectionView?.backgroundColor = .white
         self.datasource = datasources
-        self.showLoading()
+        self.discoverMovie()
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 50)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
 
@@ -30,6 +43,7 @@ extension HomeController: LoadingErrorDelegate, LoadingMoreErrorDelegate {
 
     func onRetryClicked() {
         hideLoadingError()
+        discoverMovie()
     }
 
     func onRetryMoreClicked() {}
@@ -83,5 +97,40 @@ extension HomeController: LoadingErrorDelegate, LoadingMoreErrorDelegate {
             widthConstant: 0,
             heightConstant: 0
         )
+    }
+}
+
+extension HomeController {
+
+    fileprivate func discoverMovie() {
+        showLoading()
+
+        // Making a network call
+        let url = AppConfig.Api.BaseURL + AppConfig.Module.Discover
+        let headers: HTTPHeaders = ["Accept": "application/json"]
+        Alamofire.request(
+            url,
+            method: .get,
+            parameters: params.request.nullKeyRemoval(),
+            encoding: URLEncoding(),
+            headers: headers).responseData { response in
+                let decoder = JSONDecoder()
+                let data: Result<HomeResponse> = decoder.decodeResponse(from: response)
+
+                // Decode response into model
+                guard let model = data.value else {
+                    self.hideLoading()
+                    self.showLoadingError()
+
+                    return
+                }
+                self.datasources.objects = model.results
+                self.reloadData()
+                self.hideLoading()
+        }
+    }
+
+    fileprivate func reloadData() {
+        collectionView?.reloadData()
     }
 }

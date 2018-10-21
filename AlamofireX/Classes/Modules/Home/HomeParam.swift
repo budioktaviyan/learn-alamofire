@@ -3,6 +3,11 @@ import Foundation
 struct HomeParam {
 
     var request: [String: Any] {
-        get { return ["sort_by": "popularity.desc"] }
+        get {
+            return [
+                "api_key": AppConfig.Api.Key,
+                "sort_by": "popularity.desc"
+            ]
+        }
     }
 }
