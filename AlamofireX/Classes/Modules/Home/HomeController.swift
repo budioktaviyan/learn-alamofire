@@ -68,6 +68,19 @@ class HomeController: DatasourceController {
         }
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let objects = datasources.objects else { return }
+        guard let data = objects[indexPath.row] as? HomeResponse.Result else { return }
+
+        let url = AppConfig.Api.ImageURL
+        let model = DetailResponse(
+            title: data.title,
+            overview: data.overview,
+            backdrop_path: "\(url)\(data.backdrop_path ?? "")"
+        )
+        AppRouter.sharedInstance.presentView(viewController: DetailController(model: model))
+    }
+
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentOffsetY = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height

@@ -1,8 +1,8 @@
 import UIKit
 
-extension UIImageView {
+extension UIImage {
 
-    func resize(image: UIImage, targetSize: CGSize) -> UIImage? {
+    static func resize(image: UIImage, targetSize: CGSize) -> UIImage? {
         let size = image.size
         let widthRatio = targetSize.width / image.size.width
         let heightRatio = targetSize.height / image.size.height
